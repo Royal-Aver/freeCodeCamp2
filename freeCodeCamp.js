@@ -831,5 +831,60 @@ function highAndLow(numbers){
   return `${minNumber} ${maxNumber}`
 }
 
+highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4") //"42 -9"
 
-console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4")) //"42 -9"
+
+//В этом ката вы создадите функцию, которая берет список неотрицательных целых чисел и строк и возвращает новый список с отфильтрованными строками.
+function filter_list(l) {
+  return l.filter(e => typeof e === 'number')
+}
+
+filter_list([1,2,'a','b']) //[1,2]
+
+
+// Если мы перечислим все натуральные числа до 10, кратные 3 или 5, мы получим 3, 5, 6 и 9. Сумма этих кратных равна 23.
+// Завершите решение так, чтобы оно возвращало сумму всех чисел, кратных 3 или 5, меньше переданного числа. Кроме того, если число отрицательное, верните 0 (для языков, в которых они есть).
+// Примечание. Если число кратно и 3, и 5, считайте его только один раз.
+
+function solution(number){
+  let res = 0;
+  for (let i = number - 1; i > 0; i--) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      res += i
+    }
+  }
+  return res
+}
+
+solution(10) //23
+
+
+//Подумайте о способе хранения языков в виде базы данных (например, объекта). Языки перечислены ниже, так что вы можете копировать и вставлять! Напишите функцию «приветствия», которая принимает параметр «язык» (всегда строка) и возвращает приветствие, если оно есть в вашей базе данных. По умолчанию должен быть английский, если языка нет в базе данных или в случае неверного ввода.
+function greet(language) {
+	const obj = {
+english: 'Welcome',
+czech: 'Vitejte',
+danish: 'Velkomst',
+dutch: 'Welkom',
+estonian: 'Tere tulemast',
+finnish: 'Tervetuloa',
+flemish: 'Welgekomen',
+french: 'Bienvenue',
+german: 'Willkommen',
+irish: 'Failte',
+italian: 'Benvenuto',
+latvian: 'Gaidits',
+lithuanian: 'Laukiamas',
+polish: 'Witamy',
+spanish: 'Bienvenido',
+swedish: 'Valkommen',
+welsh: 'Croeso'
+  }
+
+  if(obj[language]) {
+    return obj[language]
+  }
+  return 'Welcome'
+}
+
+console.log(greet('italian')) //'Welcome'
