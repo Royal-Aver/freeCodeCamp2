@@ -754,3 +754,42 @@ let complexArray = [
   [{ one: 1, two: 2},{ three: 3, four: 4 }],
   [{ a: "a", b: "b" }, { c: "c", d: "d" }]
 ];
+
+
+
+//Access an Array's Contents Using Bracket Notation
+// Доступ к содержимому массива с использованием скобочных обозначений
+
+//The fundamental feature of any data structure is, of course, the ability to not only store data, but to be able to retrieve that data on command. So, now that we've learned how to create an array, let's begin to think about how we can access that array's information.
+//Фундаментальной особенностью любой структуры данных является, конечно же, возможность не только хранить данные, но и извлекать эти данные по команде. Итак, теперь, когда мы узнали, как создать массив, давайте начнем думать о том, как мы можем получить доступ к информации этого массива.
+
+//When we define a simple array as seen below, there are 3 items in it:
+// Когда мы определяем простой массив, как показано ниже, в нем есть 3 элемента:
+let ourArray = ["a", "b", "c"];
+
+//In an array, each array item has an index. This index doubles as the position of that item in the array, and how you reference it. However, it is important to note, that JavaScript arrays are zero-indexed, meaning that the first element of an array is actually at the zeroth position, not the first. In order to retrieve an element from an array we can enclose an index in brackets and append it to the end of an array, or more commonly, to a variable which references an array object. This is known as bracket notation. For example, if we want to retrieve the a from ourArray and assign it to a variable, we can do so with the following code:
+//В массиве каждый элемент массива имеет индекс. Этот индекс удваивается как позиция этого элемента в массиве и то, как вы на него ссылаетесь. Однако важно отметить, что массивы JavaScript имеют нулевой индекс, а это означает, что первый элемент массива фактически находится в нулевой позиции, а не в первой. Чтобы получить элемент из массива, мы можем заключить индекс в скобки и добавить его в конец массива или, что чаще, к переменной, которая ссылается на объект массива. Это известно как запись в скобках. Например, если мы хотим получить a из массива ourArray и присвоить его переменной, мы можем сделать это с помощью следующего кода:
+let ourVariable = ourArray[0];
+
+//In addition to accessing the value associated with an index, you can also set an index to a value using the same notation:
+// В дополнение к доступу к значению, связанному с индексом, вы также можете установить индекс на значение, используя ту же нотацию:
+ourArray[1] = "not b anymore";
+
+
+
+
+//Решил задачку с рекурсией
+function rangeOfNumbers(startNum, endNum) {
+  let res = []
+  if (endNum < startNum) {
+    return []
+  } else {
+    res = rangeOfNumbers(startNum, endNum - 1);
+    res.push(endNum)
+  }
+  return res;
+};
+
+console.log(rangeOfNumbers(1, 5)) //[1, 2, 3, 4, 5]
+
+//Мы определили функцию с именем rangeOfNumbers с двумя параметрами. Функция должна возвращать массив целых чисел, который начинается с числа, представленного параметром startNum, и заканчивается числом, представленным параметром endNum. Начальное число всегда будет меньше или равно конечному числу. Ваша функция должна использовать рекурсию, вызывая саму себя, и не использовать циклы любого вида. Это также должно работать в случаях, когда и startNum, и endNum совпадают.
