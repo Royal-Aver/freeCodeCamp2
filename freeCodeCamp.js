@@ -805,4 +805,31 @@ const quarterOf = (month) => {
   (month <= 9) ? 3 : 4
 }
 
-console.log(quarterOf(11)) //1
+quarterOf(11) //1
+
+
+//Возвращает количество (количество) гласных в заданной строке. Мы будем рассматривать a, e, i, o, u как гласные для этой Ката (но не y). Входная строка будет состоять только из строчных букв и/или пробелов.
+function getCount(str) {
+
+  const res = str.match(/[aeiou]/g)
+  return (res) ? res.length : 0
+}
+
+getCount('abracadabra') //5
+
+
+//В этом небольшом задании вам дается строка чисел, разделенных пробелами, и вы должны вернуть наибольшее и наименьшее число.
+function highAndLow(numbers){
+
+  let arr = numbers.split(' ');
+  let minNumber = arr[0];
+  let maxNumber = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (minNumber < +arr[i]) minNumber = arr[i];
+    else if (maxNumber > +arr[i]) maxNumber = arr[i];
+  }
+  return `${minNumber} ${maxNumber}`
+}
+
+
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4")) //"42 -9"
