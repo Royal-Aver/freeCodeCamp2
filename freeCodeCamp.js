@@ -942,4 +942,15 @@ function bmi(weight, height) {
   else return "Obese";
 }
 
-console.log(bmi(90, 1.80)) //"Normal")
+bmi(90, 1.80) //"Normal")
+
+
+
+
+//Ваша задача состоит в том, чтобы создать функцию, которая может принимать любое неотрицательное целое число в качестве аргумента и возвращать его с цифрами в порядке убывания. По сути, переставьте цифры, чтобы получить максимально возможное число.
+function descendingOrder(n){
+  const arr = n.toString().split('').sort().reverse().join('');
+  return +arr;
+}
+
+console.log(descendingOrder(123456789)) //987654321)
