@@ -964,19 +964,6 @@ descendingOrder(123456789) //987654321)
 // Во всех словах первая буква должна быть заглавной.
 // Если окончательный результат длиннее 140 символов, он должен вернуть false.
 // Если ввод или результат представляет собой пустую строку, он должен вернуть false.
-// function generateHashtag (str) {
-//   console.log(typeof str)
-//   if (!str) return false;
-//   let arr = str.replace(/^ +| +$|( ) +/g,"$1").split(" ");
-//   arr.map(e => e[0].toUpperCase() + e.slice(1));
-//   let res = `#${arr.join("")}`;
-//   if (res.length > 140) return false;
-//   else return res;
-// }
-
-// console.log(generateHashtag("code" + " ".repeat(140) + "wars")) //"#DoWeHaveAHashtag"
-
-
 function generateHashtag(str) {
   const trimmed = str.trim();
   if (trimmed.length === 0) return false;
@@ -990,4 +977,19 @@ function generateHashtag(str) {
   return res.length <= 140 ? res : false;
 }
 
-console.log(generateHashtag("code" + " ".repeat(140) + "wars")) //"#DoWeHaveAHashtag"
+generateHashtag("code" + " ".repeat(140) + "wars") //"#DoWeHaveAHashtag"
+
+
+
+// Учитывая целое число, определите, является ли оно квадратным числом:
+// В математике квадратное число или идеальный квадрат — это целое число, являющееся квадратом целого числа; другими словами, это произведение некоторого целого числа на самого себя.
+var isSquare = function(n){
+  if (n === 0) return true;
+  let res = false;
+  for (let i = 0; i <= n; i++) {
+    if (n / i === i) return res = true
+  }
+  return res
+}
+
+console.log(isSquare(1)) //true
