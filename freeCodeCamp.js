@@ -953,4 +953,41 @@ function descendingOrder(n){
   return +arr;
 }
 
-console.log(descendingOrder(123456789)) //987654321)
+descendingOrder(123456789) //987654321)
+
+
+
+//Маркетинговая команда тратит слишком много времени на ввод хэштегов.
+// Давайте поможем им с нашим генератором хэштегов!
+// Вот сделка:
+// Он должен начинаться с хэштега (#).
+// Во всех словах первая буква должна быть заглавной.
+// Если окончательный результат длиннее 140 символов, он должен вернуть false.
+// Если ввод или результат представляет собой пустую строку, он должен вернуть false.
+// function generateHashtag (str) {
+//   console.log(typeof str)
+//   if (!str) return false;
+//   let arr = str.replace(/^ +| +$|( ) +/g,"$1").split(" ");
+//   arr.map(e => e[0].toUpperCase() + e.slice(1));
+//   let res = `#${arr.join("")}`;
+//   if (res.length > 140) return false;
+//   else return res;
+// }
+
+// console.log(generateHashtag("code" + " ".repeat(140) + "wars")) //"#DoWeHaveAHashtag"
+
+
+function generateHashtag(str) {
+  const trimmed = str.trim();
+  if (trimmed.length === 0) return false;
+
+  const arr = trimmed
+    .replace(/\s+/g, " ")
+    .split(" ")
+    .map((e) => e[0].toUpperCase() + e.substring(1));
+  const res = `#${arr.join("")}`;
+
+  return res.length <= 140 ? res : false;
+}
+
+console.log(generateHashtag("code" + " ".repeat(140) + "wars")) //"#DoWeHaveAHashtag"
