@@ -992,4 +992,19 @@ var isSquare = function(n){
   return res
 }
 
-console.log(isSquare(1)) //true
+isSquare(1) //true
+
+
+
+//Просто, учитывая строку слов, вернуть длину кратчайшего слова (слов). Строка никогда не будет пустой, и вам не нужно учитывать разные типы данных.
+function findShort(s){
+  let res = s.split(' ');
+  let a = Infinity;
+
+  for (let i = 0; i < res.length; i++) {
+    a = Math.min(res[i].length, a);
+  }
+  return a;
+}
+
+console.log(findShort("turns out random test cases are easier than writing out basic ones")) //3
