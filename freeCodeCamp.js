@@ -1022,4 +1022,14 @@ let arr = string.split(' ');
   return res.join(' ')
 }
 
-console.log(spinWords("You are almost to the last test")) //"You are tsomla to the last test"
+spinWords("You are almost to the last test") //"You are tsomla to the last test"
+
+
+
+//Джейден Смит, сын Уилла Смита, является звездой таких фильмов, как «Каратэ-пацан» (2010) и «После Земли» (2013). Джейден также известен своей философией, которую он распространяет через Twitter. Когда он пишет в Твиттере, он известен тем, что почти всегда пишет каждое слово с большой буквы. Для простоты вам придется писать каждое слово с заглавной буквы. 
+// Ваша задача состоит в том, чтобы преобразовать строки в то, как они были бы написаны Джейденом Смитом. Строки являются настоящими цитатами Джейдена Смита, но они не написаны с заглавной буквы так, как он их изначально напечатал.
+function toJadenCase (string) {
+  return (string.split(' ').map((word) => word[0].toUpperCase() + word.slice(1))).join(' ');
+}
+
+console.log(toJadenCase("How can mirrors be real if our eyes aren't real")) //"How Can Mirrors Be Real If Our Eyes Aren't Real");
