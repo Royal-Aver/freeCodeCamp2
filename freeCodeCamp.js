@@ -1007,4 +1007,19 @@ function findShort(s){
   return a;
 }
 
-console.log(findShort("turns out random test cases are easier than writing out basic ones")) //3
+findShort("turns out random test cases are easier than writing out basic ones") //3
+
+
+
+//Напишите функцию, которая принимает строку из одного или нескольких слов и возвращает ту же строку, но с перевернутыми всеми словами из пяти или более букв (точно так же, как имя этого Ката). Передаваемые строки будут состоять только из букв и пробелов. Пробелы будут включены только в том случае, если присутствует более одного слова.
+
+function spinWords(string){
+let res = [];
+let arr = string.split(' ');
+  for(let i = 0; i < arr.length; i++) {
+    (arr[i].length >= 5) ? res.push([...arr[i]].reverse().join('')) : res.push(arr[i])
+  }
+  return res.join(' ')
+}
+
+console.log(spinWords("You are almost to the last test")) //"You are tsomla to the last test"
