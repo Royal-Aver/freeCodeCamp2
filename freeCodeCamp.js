@@ -1054,4 +1054,19 @@ function findOdd(A) {
 return +res.join('')
 }
 
-console.log(findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1])) //4);
+findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1]) //4);
+
+
+
+// Проверьте, содержит ли строка одинаковое количество «x» и «o». Метод должен возвращать логическое значение и не учитывать регистр. Строка может содержать любой символ.
+function XO(str) {
+  let string = str.toLowerCase();
+  const obj = [...string].reduce((key, value) => {
+    key[value] = (key[value] || 0) + 1 ;
+    return key;
+  } , {});
+  const valuesObj = Object.values(obj);
+  return (valuesObj[0] === valuesObj[1]) ? true : false;
+}
+
+console.log(XO("xxOoo")) //true)
